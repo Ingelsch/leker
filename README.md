@@ -1,2 +1,2 @@
 # leker
-her tester jeg kanskje rett som det er
+her tester jeg kanskje rett som det er :)
