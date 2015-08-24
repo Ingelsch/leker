@@ -1,0 +1,224 @@
+Tok ingen notater første forelesning.
+
+Forelesning 19/8-14
+===================
+
+Repetisjon fra forrige forelesning:
+* En algoritme er en ordnet (well-ordered) samling utvetydig og effektivt utførbare operasjoner som ved kjøring gir et resultat og avslutter etter et endelig tidsintervall.
+* Dominerende operasjoner - en algoritmes orden
+
+Maks-metode: Sentinel (vaktpost) - samme orden, færre operasjoner per iterasjon
+
+Enkel algoritmeanalyse
+----------------------
+
+Setning 1.1.6 a)  I en tabell med n (n > 1) forskjellige tall er i gjennomsnitt
+1/2 + 1/3 + 1/4 + . . . . + 1/n  av dem større enn det største av de foran.
+
+Harmonisk sum: H_n = 1 + 1/2 + 1/3 + ... + 1/n ≈ log(n) + 0.557
+
+Setning 1.1.6 b)  I en tabell med n forskjellige tall (n stor) er i gjennomsnitt
+log(n) – 0,423 av dem større enn det største av tallene foran.
+
+Testing og generering av testverdier
+------------------------------------
+
+* java.util.OptionalInt - ny i java 8
+  - Konstruktører: of(int), empty()
+  - boolean isPresent()
+  - Med lambda-uttrykk: isPresent(System.out::printLn)
+* Arrays.toString(int[])
+
+Forskjellige forsøk på randPerm()-metode, array med tilfeldige tall, kun en forekomst av hvert tall:
+* Naiv implementasjon, itererer gjennom array for hvert element. Ineffektiv algoritme. Orden: n^2 * log(n)
+* Boolsk tabell - mye minnebruk, dårlig worst case. Fortsatt test-og-prøv-på-nytt. Orden: n * log(n)
+* Generer tabell og permuterer separat. Endelig kjøretid. Orden: n
+* Metode som bare permuterer eksisterende tabell. Gjenbrukbart. Orden: n
+
+Forelesning 21/8-14
+===================
+
+Skrev program som viste at setning 1.1.6b stemmer, x = log(n) – 0,423
+
+Måling av tidsforbruk:
+* java.lang.currentTimeMillis()
+* Mange iterasjoner for å få målbar tidsbruk
+* Måling av faste kostnader
+* Fra maks1 til maks2 (optimalisert vekk tabellaksess) er det enorm forskjell, selv om det er samme orden
+* Fra maks2 til maks3 (vaktpost) er det ikke så stor forskjell
+
+Max og min i java
+* java.util.stream.IntStream
+* Arrays.stream(int[])
+* stream.max() returnerer OptionalInt
+
+1.2  Den nest største verdien i en tabell
+-----------------------------------------
+
+Tabellintervaller
+* Halvåpent: a[fra:til>
+	- 0 <= fra
+	- fra <= til
+	- til <= a.length
+* Lukket: a[v:h]
+	- 0 <= v
+	- v - 1 <= h
+	- h < a.length
+	- v > h -> tomt intervall
+
+For klasser som ikke skal instansieres (bare statiske metoder): privat, tom konstruktør.
+
+Forelesning 26/8-14
+===================
+
+Nest største verdi:
+* Maksmetode som kan søke i intervaller: Tabell.maks(int[] a, int fra, int til)
+* Nest største: først finne maks, så finne nest største til venstre eller høyre for maks
+  - Edge cases: størst først, størst sist, kun ett element, tom liste
+* Ny strategi: nest største med én enkelt iterasjon av tabellen
+
+Effektivitet:
+* Gjennomsnittlig effektivitet (average case)
+* Verste tilfellet (worst case)
+* Beste tilfellet (best case)
+
+Setning 1.2.7 a)  I en tabell med n > 2 forskjellige tall er i gjennomsnitt
+	2/3 + 2/4 + . . . . + 2/n = 2Hn - 3
+	av dem større enn det nest største av tallene foran.
+
+Binære trær / Turneringstrær
+----------------------------
+
+* serie (round robin, all-play-all) og utslag (knockout)
+
+Nest største i turneringstrær
+* Finne største blant n: n - 1 uansett
+* MEN finne nest største blir mye mindre kostbart, trenger bare se på alle som "tapte" mot vinneren
+
+Tre-terminologi:
+* Node
+* Level/nivå 0, 1, ...
+* Root (nivå 0)
+* Barn og foreldre, søsken, venstre barn, høyre barn
+* Indre noder (inner node) og Blad (leaf)
+
+Generelle turneringer:
+* Hvis det ikke er 2^k bladnoder, så blir det "walk-over" for noen noder
+* Trær med n bladnoder har 2n - 1 noder
+
+Ulike typer trær
+----------------
+
+Perfekt binærtre: alle nivåer i treet har så mange noder som det er plass til.
+* Hvert nivå k har 2^k noder
+* Totalt antall noder er 2^(k + 1) - 1
+* Et perfekt tre er også komplett og fullt
+
+Komplett binærtre: Alle nivåer untatt siste har maksimalt antall noder, siste har noder tett fra venstre
+* Et komplett binærtre med n noder har høyde h = ⌈log2(n+1)⌉ – 1   = ⌊log2(n)⌋
+
+Fullt binærtre: hver node har to eller ingen barn
+
+Maksimumstre: Hver barnenode har verdi som er mindre eller lik verdien i dens forelder-node.
+
+Maksimumsheap: komplett maksimumstre
+
+Turneringstre: fullt, maksimum, komplett, men ikke nødvendigvis perfekt
+* Partall antall bladnoder
+
+Hvordan implementere en turnering
+---------------------------------
+
+Teknikk: Nummerere nodene fra topp til bunn, venstre til høyre, fra 1 til n
+* OBS: Posisjon 0 er tom
+
+Navigere fra nodenummer k:
+* Venstre barn: 2k
+* Høyre barn: 2k + 1
+* Forelder (hvis k > 1): ⌊k / 2⌋
+
+Forelesning 28/8-14
+===================
+
+Vi gikk gjennom implementasjon av nestMaks med turneringstre og nummerering av nodenummer i binærtrær.
+
+1.3 Partisjonering
+------------------
+
+Partisjonering:
+* Algoritme: Bytte venstre og høyre
+* The dutch national flag problem: enkel tilnærming - partisjonér to ganger
+
+Setning 1.3.1 a)  La tabellen a inneholde en vilkårlig permutasjon av tallene fra 1 til n og la s være et av dem. Da vil antallet tall blant de s − 1 første som ikke er mindre enn s (dvs. større enn eller lik s), være det samme som antallet ombyttinger med s som skilleverdi i partisjoneringsalgoritmen.
+
+Setning 1.3.1 b)  Det gjennomsnittlige antallet ombyttinger i algoritmen for partisjonering, der gjennomsnittet er over alle permutasjoner av tallene fra 1 til n og over alle skilleverdier s fra 1 til n, er eksakt lik (n2 − 1)/6n.
+
+Partisjonering og Sortering
+---------------------------
+
+Definisjon 1.3.2 a)  En verdi i en tabell står på rett sortert plass hvis alle elementene til venstre for verdi er mindre enn eller lik verdi og alle elementene til høyre for verdi er større enn eller lik verdi.
+
+sParter: Partisjonering der skilleverdien beholdes i midten
+1. Velg pivot (et element i tabellen, f.eks. det midterste)
+2. Flytt pivot bakerst
+3. Partisjoner alle untatt bakerste rundt pivot
+3. Bytt pivot med første verdi større enn pivot
+
+Forelesning 2/9-14
+==================
+
+Kvikksortering:
+* Rekursiv
+* hvis v < h: sParter, kvikksorter venstre, kvikksorter høyre
+* Beste sorteringsalgoritme i gjennomsnitt
+* Dårlig effektivitet hvis det velges pivot langt unna gjennomsnittet
+  - Kan forbedres ved å velge f.eks. 9 elementer, sortere og velge den midterste av dem
+
+Kvikksøk: Finne n-te største elementet i en usortert tabell
+
+Permutasjoner
+-------------
+
+Leksikografisk ordning:
+* sammeligning to permutasjoner posisjon for posisjon fra venstre
+* første ulike symbol sammenlignes, og avgjør hvilken permutasjon som er størst
+* hvis alle symboler er like er permutasjonene like
+
+Algoritme for å finne neste leksikografiske permutasjon:
+* Første permutasjon sortert stigende
+* Siste permutasjon sortert synkende
+1. Fra høyre, finn første posisjon som er større enn sin venstre posisjon
+2. TODO
+
+Forelesning 4/9-14
+==================
+
+Anvendelse av kode for å generere alle permutasjoner:
+* telle antall bytt ved partisjonering
+* telle antall større en alle foregående
+
+Sorterte tabeller
+* Stigende (a[i] <= a[j] for alle i < j)
+* Synkende (a[i] >= a[j] for alle i < j)
+* Tabeller med lengde <= 1 er både stigende og avtagende
+* Mål på sortering: Antall inversjoner (antall par der betingelsen for stigende ikke holder)
+
+Utvalgssortering (selection sort):
+* For hvert element fra høyre til venstre: Bytt elementet med det største elementet fra og med 0 til og med elementet selv
+
+Metode for å snu tabell: tell fra venstre og høyre mot midten, bytt så lenge venstre < høyre
+
+Søking i en usortert tabell:
+* Kun en algoritme: O(n), gjennomsnitt (n + 1) / 2, kan eventuelt bruke vaktpost
+* Returnerer indeks eller -1 (hvis det ikke finnes i listen)
+
+Søking i en sortert tabell:
+* Innsettingspunkt: posisjonen i en sortert tabell der en verdi kan settes inn slik at tabellen forblir sortert
+* Returverdi: positiv indeks hvis elementet finnes i tabellen, negativt innsettingspunkt ellers
+* Hvis negativ så returneres -(insettingspunktet + 1) for å unngå tvetydighet (-0 == +0)
+
+lineærsøk:
+* Ny idé: vaktpost uten å endre tabell, men ved å teste i begynnelsen av metoden
+* Gjennomsnitt: n/2 + 2 – 1/(n+1) ≈ n/2 + 2
+
+Intervallsøk: Finne alle verdier innenfor et intervall
