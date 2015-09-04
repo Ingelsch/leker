@@ -1,4 +1,4 @@
-1.1.2
+﻿1.1.2
 -----
 
 1. 6
@@ -100,7 +100,11 @@ long fak(int n) som regner ut n! . Hvor mange multiplikasjoner utføres i meto
 
 1.1.7
 -----
+1. 	Lag et main-program med metoden makstest der Programkode 1.1.2	skjer?
 
+	Alt er greit.
+
+2.	
 3.	Bruk makstest på de to versjonene i Programkode 1.1.4 og 1.1.5. Da vil det bl.a. komme melding om at det kastes feil unntak for en tom tabell. Hvilket unntak kastes? Gjør om koden slik at rett unntak kastes.
 
 	Kastet ArrayIndexOutOfBoundsException istedenfor NoSuchElementException ved tom tabell.
