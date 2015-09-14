@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 public class Oppgave1_1_6
 {
@@ -8,10 +8,8 @@ public class Oppgave1_1_6
 	public static double harmonisk (int n)
 	{
 		if (n <= 0) throw new IllegalArgumentException("argumentet må være positivt");
-	    double sum = 0;
-	    while (n > 0) 
-    {
-    
+    double sum = 0;
+    while (n > 0) {
         sum += 1d / n--;
     }
     return sum;
@@ -48,12 +46,11 @@ public class Oppgave1_1_6
     int n;
     double avg;
     
-    for (int i = 1; i <= 7; i++) 
-    	{
-	        n = (int) Math.pow(10, i);
-	        avg = Math.log(n) - 0.423d;
-	        System.out.printf("%d\t\t%.1f\n", n, avg);
-    	}
+    for (int i = 1; i <= 7; i++) {
+        n = (int) Math.pow(10, i);
+        avg = Math.log(n) - 0.423d;
+        System.out.printf("%d\t\t%.1f\n", n, avg);
+    }
 	}
 
 }
