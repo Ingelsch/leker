@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author inge
+ *
+ */
+package hjelpeklasser;

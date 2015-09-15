@@ -1,3 +1,5 @@
+package AlgDat;
+
 public class Eksempel1_1_2
 {
 	public static int maks(int[] a) // a er en heltallstabell
@@ -19,11 +21,6 @@ public class Eksempel1_1_2
 		return m; // returnerer indeksen/posisjonen til største verdi
 	} //maks
  
-  public static void main(String[] args)
-  {
-  	int[] a =	{8, 4, 17, 10, 6, 20, 1, 11, 20, 20, 15, 3, 18, 9, 2, 7, 19};
-  	int i = maks(a);
-  	System.out.println("Maksverdien ligger pa indeks " + i + ", og har verdi " + a[i]);
-  }
+
 }
 

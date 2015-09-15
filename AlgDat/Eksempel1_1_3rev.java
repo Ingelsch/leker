@@ -1,26 +1,23 @@
+package AlgDat;
+
 public class Eksempel1_1_3rev
 {
 	public static int maks(int[] a) // versjon 2 av maks-metoden
 	{
-  	int m = 0; // indeks til største verdi
+  	int m = 0; // indeks til største verdi Operasjoner 1
   	
-  	int maksverdi = a[0]; // største verdi
+  	int maksverdi = a[0]; // største verdi Operasjoner 2
   	
-  	for (int i = 1; i < a.length; i++) 
-  		if (a[i] >= maksverdi) // ">=" viser her siste verdi av største verdi, men ">" viser kun største verdi (pa tidligste posisjon)
+  	for (int i = 1; i < a.length; i++) // Operasjoner 1 + n + (n-1)
+  		if (a[i] >= maksverdi) // ">=" viser her siste verdi av største verdi, men ">" viser kun største verdi (pa tidligste posisjon) Operasjoner 2(n-1)
     	{
-    		maksverdi = a[i]; // største verdi oppdateres
-    		m = i; // indeks til største verdi oppdateres
+    		maksverdi = a[i]; // største verdi oppdateres Operasjoner 2x
+    		m = i; // indeks til største verdi oppdateres Operasjoner x
     	}
   	
-  	return m; // returnerer indeks/posisjonen til største verdi
+  	return m; // returnerer indeks/posisjonen til største verdi Operasjoner 1
 	} // maks
  
-  public static void main(String[] args)
-  {
-  	int[] a =	{8, 4, 17, 10, 6, 20, 1, 11, 20, 20, 15, 3, 18, 9, 2, 7, 19};
-  	int i = maks(a);
-  	System.out.println("Maksverdien ligger pa indeks " + i + ", og har verdi " + a[i]);
-  }
+
 }
 

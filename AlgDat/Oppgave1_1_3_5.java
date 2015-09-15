@@ -1,3 +1,4 @@
+package AlgDat;
 
 public class Oppgave1_1_3_5
 {	
@@ -10,20 +11,23 @@ public class Oppgave1_1_3_5
             int[] b = {m1, m2};
     */
 
-    int min = 0, max = 0;
-
-    for (int i = 0; i < a.length; i++) {
-        if (a[i] < a[min]) min = i;
-        if (a[i] > a[max]) max = i;
-    }
-    return new int[] {min, max};
+	    int m1 = 0, m2 = 0; //2
+	
+	    for (int i = 0; i < a.length; i++) //1 + n + (n-1) = 2n
+	    {
+	        if (a[i] < a[m1]) // (n-1)
+        	{
+        		m1 = i; // x
+        	}
+	        	
+	        if (a[i] > a[m2]) // (n-1)
+	        {
+	        	m2 = i; // x
+	        }
+	    }
+       
+	    return new int[] {m1, m2}; // 2
 	}
-	public static void main(String[] args)
-	{
-    int[] a = {8,3,5,7,9,6,10,2,1,4};
-    System.out.println("Her er posisjonene til minste og storste verdi: \n[min, maks]");
-    System.out.println(java.util.Arrays.toString(minmax(a)));
-
-	}
-
 }
+//Hvor mange sammenligninger bruker metoden din?
+// 2(n-1) (grunnleggende operasjoner= 

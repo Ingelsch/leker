@@ -1,3 +1,4 @@
+package AlgDat;
 
 public class AlgDatSetup 
 {
