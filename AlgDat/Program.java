@@ -1,19 +1,17 @@
-package AlgDat;
+package algDat;
 
 import hjelpeklasser.*;
 
-import java.io.IOException;
+import java.util.Arrays;
 
 public class Program
 {
 	public static void main(String ... args)      // hovedprogram
 	{
-		int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
-		for (int k : a) System.out.print(k + " ");  // skriver ut a
-
-		int m = Tabell.maks(a);   // finner posisjonen til største verdi
-
-		System.out.println("\nStørste verdi ligger på plass " + m);
+		int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
+		Tabell.utvalgssortering2(a);           // stigende sortering
+		Tabell.snu(a);                        // tabellen snus
+		Tabell.skriv(a);                      // 10 9 8 7 6 5 4 3 2 1
 
 	} // main
 
@@ -21,6 +19,52 @@ public class Program
 
 	  
 	/*
+	  	___
+	  	  int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
+  Tabell.utvalgssortering(a);           // stigende sortering
+  Tabell.snu(a);                        // tabellen snus
+  Tabell.skriv(a);                      // 10 9 8 7 6 5 4 3 2 1
+	  	___
+	  	  int[] a = {5, 9, 6, 10, 2, 7, 3, 8, 4, 1};          // en heltallstabell
+  System.out.println(Arrays.toString(a));             // skriver ut
+
+  int antInv = Tabell.inversjoner(a);                 // inversjoner
+  System.out.println("Inversjoner: " + antInv);       // skriver ut
+
+  int antOmb = Tabell.boble(a, a.length);             // ombyttinger
+  antInv = Tabell.inversjoner(a);                     // inversjoner
+
+  System.out.println(Arrays.toString(a));             // skriver ut
+  System.out.print("Ombyttinger: " + antOmb + "  ");  // ombyttinger
+  System.out.println("Inversjoner: " + antInv);       // inversjoner
+
+  // Utskrift:
+  // [5, 9, 6, 10, 2, 7, 3, 8, 4, 1]
+  // Inversjoner: 29
+  // [5, 6, 9, 2, 7, 3, 8, 4, 1, 10]
+  // Ombyttinger: 7  Inversjoner: 22
+	  	___
+	  	int n = 100000;         // tabellstørrelse
+  int antall = 1000;      // antall gjentagelser
+
+  long tid = 0;           // for tidsmåling
+
+  int a[] = randPerm(n);  // en permutasjon av 1, . .  n
+
+  tid = System.currentTimeMillis();  // leser av klokken
+  for (int i = 0; i < antall; i++) nestMaks1(a);
+  tid = System.currentTimeMillis() - tid;  // medgått tid
+  System.out.println("Maks1-metoden: " + tid + " millisek");
+
+  tid = System.currentTimeMillis();  // leser av klokken
+  for (int i = 0; i < antall; i++) nestMaks2(a);
+  tid = System.currentTimeMillis() - tid;  // medgått tid
+  System.out.println("Maks2-metoden: " + tid + " millisek");
+
+  tid = System.currentTimeMillis();  // leser av klokken
+  for (int i = 0; i < antall; i++) nestMaks3(a);
+  tid = System.currentTimeMillis() - tid;  // medgått tid
+  System.out.println("Maks3-metoden: " + tid + " millisek");
 	  	___
 
 	  		public static void main(String ... args)      // hovedprogram

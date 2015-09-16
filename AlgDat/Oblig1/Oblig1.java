@@ -4,13 +4,10 @@ Kristoffer P.Skarrud s239404 HINGDATA14HA
 Simen Dagfinrud s236376 HINGDATA14HA
 Inge L. Schiager s198749 INFORMATIK14HA
  */
-package AlgDat.Oblig1;
+package algDat.Oblig1;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  *

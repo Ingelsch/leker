@@ -1,4 +1,4 @@
-package AlgDat.Oblig1;
+package algDat.Oblig1;
 
 /**
  * Created by inge on 14.09.2015.

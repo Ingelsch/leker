@@ -261,6 +261,11 @@ public class Tabell //Samleklasse for tabellmetoder
 		while (v < h) bytt(a,v++,h--);
 	}
 
+	public static void snu(int[] a, int v)  // snur fra og med v og ut tabellen
+	{
+		snu(a, v, a.length - 1);
+	}
+
 	public static void snu(int[] a)
 	//Oppgave 5 til Avsnitt 1.2.3
 	{
@@ -282,7 +287,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		while (v < h) bytt(a,v++,h--);
 	}
 
-	/*public static int[] nestMaks(int[] a)  // legges i class Tabell
+	public static int[] nestMaks1(int[] a)  // legges i class Tabell
 	//Programkode 1.2.4 a)
 	{
 		int n = a.length;   // tabellens lengde
@@ -311,9 +316,9 @@ public class Tabell //Samleklasse for tabellmetoder
 
 		return new int[] {m,nm};      // m i posisjon 0 , nm i posisjon 1
 
-	}*/ // nestMaks
+	} // nestMaks
 
-	/*public static int[] nestMaks(int[] a) // ny versjon
+	public static int[] nestMaks(int[] a) // ny versjon
 	//Programkode 1.2.5 a)
 	{
 		int n = a.length;     // tabellens lengde
@@ -351,9 +356,9 @@ public class Tabell //Samleklasse for tabellmetoder
 
 		return new int[] {m,nm};    // n i posisjon 0, nm i posisjon 1
 
-	}*/ // nestMaks
+	} // nestMaks
 
-	public static int[] nestMaks(int[] a)
+	public static int[] nestMaks2(int[] a)
 	//Oppgave 2 til Avsnitt 1.2.5
 	{
 		int n = a.length;  // tabellens lengde
@@ -398,6 +403,38 @@ public class Tabell //Samleklasse for tabellmetoder
 			}
 		} // for
 	} // nestMaks
+
+	public static int[] nestMaks3(int[] a)   // en turnering
+	//Programkode 1.2.13 a)
+	{
+		int n = a.length;                // for å forenkle notasjonen
+
+		if (n < 2) // må ha minst to verdier!
+			throw new IllegalArgumentException("a.length(" + n + ") < 2!");
+
+		int[] b = new int[2*n];          // turneringstreet
+		System.arraycopy(a,0,b,n,n);     // legger a bakerst i b
+
+		for (int k = 2*n-2; k > 1; k -= 2)   // lager turneringstreet
+			b[k/2] = Math.max(b[k],b[k+1]);
+
+		int maksverdi = b[1], nestmaksverdi = Integer.MIN_VALUE;
+
+		for (int m = 2*n - 1, k = 2; k < m; k *= 2)
+			{
+				int tempverdi = b[k+1];  // ok hvis maksverdi er b[k]
+				if (maksverdi != b[k]) { tempverdi = b[k]; k++; }
+				if (tempverdi > nestmaksverdi) nestmaksverdi = tempverdi;
+			}
+
+		return new int[] {maksverdi,nestmaksverdi}; // størst og nest størst
+
+	} // nestMaks
+
+	public static void kopier(int[] a, int i, int[] b, int j, int ant)
+	{
+		while (i < ant) b[j++] = a[i++];
+	}
 
 	public static int[] nestMin(int[] a)
 	////Oppgave 3 til Avsnitt 1.2.5
@@ -483,6 +520,107 @@ public class Tabell //Samleklasse for tabellmetoder
 		return new int[] {m,nm,tm};
 
 	} // tredjeMaks
+
+	public static boolean nestePermutasjon(int[] a)
+	//Programkode 1.3.1 b)
+	{
+		int i = a.length - 2;                    // i starter nest bakerst
+		while (i >= 0 && a[i] > a[i + 1]) i--;   // går mot venstre
+		if (i < 0) return false;                 // a = {n, n-1, . . . , 2, 1}
+
+		int j = a.length - 1;                    // j starter bakerst
+		while (a[j] < a[i]) j--;                 // stopper når a[j] > a[i]
+		bytt(a,i,j); snu(a,i + 1);         // bytter og snur
+
+		return true;                             // en ny permutasjon
+	}
+
+	public static int inversjoner(int[] a)
+	//Programkode 1.3.2 a)
+	{
+		int antall = 0;  // antall inversjoner
+		for (int i = 0; i < a.length - 1; i++)
+			{
+				for (int j = i + 1; j < a.length; j++)
+					{
+						if (a[i] > a[j]) antall++;  // en inversjon siden i < j
+					}
+			}
+		return antall;
+	}
+
+	public static boolean erSortert(int[] a)  // legges i samleklassen Tabell
+	//Programkode 1.3.2 c)
+	{
+		for (int i = 1; i < a.length; i++)      // starter med i = 1
+			if (a[i-1] > a[i]) return false;      // en inversjon
+
+		return true;
+	}
+
+	public static int boble(int[] a, int n)  // legges i samleklassen Tabell
+	//Programkode 1.3.3 a)
+	{
+		int antall = 0;                 // antall ombyttinger i tabellen
+		for (int i = 1; i < n; i++)     // går fra 1 til n
+			{
+				if (a[i - 1] > a[i])          // sammenligner to naboverdier
+					{
+						bytt(a,i - 1, i);           // bytter om to naboverdier
+						antall++;                   // teller opp
+					}
+			}
+		return antall;                  // returnerer
+	}
+
+	public static void boblesortering(int[] a)
+	//Programkode 1.3.3 d)
+	{
+		for (int n = a.length; n > 1; n--)
+			{
+				if (boble(a, n) == 0) break;
+			}
+	}
+
+	public static void utvalgssortering(int[] a)
+	{
+		for (int i = 0; i < a.length - 1; i++)
+			{
+				int m = i;             // indeks til den foreløpig minste
+				int  minverdi = a[i];  // verdien til den foreløpig minste
+
+				for (int j = i + 1; j < a.length; j++)
+					{
+						if (a[j] < minverdi)
+							{
+								minverdi = a[j];  // ny minste verdi
+								m = j;            // indeksen til ny minste verdi
+							}
+					}
+				// bytter om a[i] og a[m]
+				int temp = a[i];
+				a[i] = a[m];
+				a[m] = temp;
+			}
+	}
+
+	public static void utvalgssortering2(int[] a)
+	//Programkode 1.3.4 a)
+	{
+		for (int i = 0; i < a.length - 1; i++)
+			bytt(a, i, min(a, i, a.length));  // to hjelpemetoder
+	}
+
+	public static int lineærsøk(int[] a, int verdi) // legges i class Tabell
+	//Programkode 1.3.5 b)
+	{
+		if (a.length == 0 || verdi > a[a.length-1])
+			return -(a.length + 1);  // verdi er større enn den største
+
+		int i = 0; for( ; a[i] < verdi; i++);  // siste verdi er vaktpost
+
+		return verdi == a[i] ? i : -(i + 1);   // sjekker innholdet i a[i]
+	}
 
 
 

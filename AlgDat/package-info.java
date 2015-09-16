@@ -5,4 +5,4 @@
  * @author inge
  *
  */
-package AlgDat;
+package algDat;
