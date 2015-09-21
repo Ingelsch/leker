@@ -17,16 +17,16 @@ public class Tabell //Samleklasse for tabellmetoder
 		int antall = 0;            // antall tall
 		int maksverdi = a[0];
 
-		for (int i = 1; i < a.length; i++)    // går gjennom tabellen a
+		for (int i = 1; i < a.length; i++)    // gaar gjennom tabellen a
 		{
-			if (a[i] > maksverdi)    // a[i] er større enn største foran
+			if (a[i] > maksverdi)    // a[i] er storre enn storste foran
 			{
 				antall++;              // har funnet et nytt tall
 				maksverdi = a[i];      // oppdaterer maksverdi
 			}
 		}
 
-		return antall;    // de som er større enn det største foran
+		return antall;    // de som er storre enn det storste foran
 	}
 
 	public static int[] randPerm(int n)  // en effektiv versjon
@@ -37,7 +37,7 @@ public class Tabell //Samleklasse for tabellmetoder
 
 		Arrays.setAll(a, i -> i + 1);    // legger inn tallene 1, 2, . , n
 
-		for (int k = n - 1; k > 0; k--)  // løkke som går n - 1 ganger
+		for (int k = n - 1; k > 0; k--)  // løkke som gaar n - 1 ganger
 		{
 			int i = r.nextInt(k+1);        // en tilfeldig tall fra 0 til k
 			bytt(a,k,i);                   // bytter om
@@ -66,19 +66,19 @@ public class Tabell //Samleklasse for tabellmetoder
 		throw new IllegalArgumentException("Illegalt intervall!");
 	}
 
-	int m = fra;              // indeks til største verdi i a[fra:til>
-	int maksverdi = a[fra];   // største verdi i a[fra:til>
+	int m = fra;              // indeks til storste verdi i a[fra:til>
+	int maksverdi = a[fra];   // storste verdi i a[fra:til>
 
 	for (int i = fra + 1; i < til; i++)
 	{
 		if (a[i] > maksverdi)
 		{
-			m = i;                // indeks til største verdi oppdateres
-			maksverdi = a[m];     // største verdi oppdateres
+			m = i;                // indeks til storste verdi oppdateres
+			maksverdi = a[m];     // storste verdi oppdateres
 		}
 	}
 
-	return m;  // posisjonen til største verdi i a[fra:til>
+	return m;  // posisjonen til storste verdi i a[fra:til>
 	}*/
 
 	/*public static int maks(int[] a, int fra, int til)
@@ -89,20 +89,20 @@ public class Tabell //Samleklasse for tabellmetoder
 		if (fra == til) throw new NoSuchElementException
 				("fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!");
 
-		int m = fra;             // indeks til største verdi i a[fra:til>
-		int maksverdi = a[fra];  // største verdi i a[fra:til>
+		int m = fra;             // indeks til storste verdi i a[fra:til>
+		int maksverdi = a[fra];  // storste verdi i a[fra:til>
 
 		for (int i = fra + 1; i < til; i++) if (a[i] > maksverdi)
 		{
-			m = i;               // indeks til største verdi oppdateres
-			maksverdi = a[m];    // største verdi oppdateres
+			m = i;               // indeks til storste verdi oppdateres
+			maksverdi = a[m];    // storste verdi oppdateres
 		}
 
-		return m;  // posisjonen til største verdi i a[fra:til>
+		return m;  // posisjonen til storste verdi i a[fra:til>
 	}*/
 
 	public static int maks(int[] a, int fra, int til)
-	//Metoden er oppdatert slik at det også er kode som tester parameteren a og som gir en fornuftig feilmelding hvis a er null.
+	//Metoden er oppdatert slik at det ogsaa er kode som tester parameteren a og som gir en fornuftig feilmelding hvis a er null.
 	{
 		if (a == null) throw new NullPointerException
 				("parametertabellen a er null!");
@@ -112,16 +112,16 @@ public class Tabell //Samleklasse for tabellmetoder
 		if (fra == til) throw new NoSuchElementException
 				("fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!");
 
-		int m = fra;             // indeks til største verdi i a[fra:til>
-		int maksverdi = a[fra];  // største verdi i a[fra:til>
+		int m = fra;             // indeks til storste verdi i a[fra:til>
+		int maksverdi = a[fra];  // storste verdi i a[fra:til>
 
 		for (int i = fra + 1; i < til; i++) if (a[i] > maksverdi)
 		{
-			m = i;               // indeks til største verdi oppdateres
-			maksverdi = a[m];    // største verdi oppdateres
+			m = i;               // indeks til storste verdi oppdateres
+			maksverdi = a[m];    // storste verdi oppdateres
 		}
 
-		return m;  // posisjonen til største verdi i a[fra:til>
+		return m;  // posisjonen til storste verdi i a[fra:til>
 	}
 
 	public static int maks(int[] a)  // bruker hele tabellen
@@ -234,7 +234,7 @@ public class Tabell //Samleklasse for tabellmetoder
 			throw new ArrayIndexOutOfBoundsException
 					("til(" + til + ") > tablengde(" + tablengde + ")");
 
-		if (fra > til)                                // fra er større enn til
+		if (fra > til)                                // fra er storre enn til
 			throw new IllegalArgumentException
 					("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
 	}
@@ -292,18 +292,18 @@ public class Tabell //Samleklasse for tabellmetoder
 	{
 		int n = a.length;   // tabellens lengde
 
-		if (n < 2) throw   // må ha minst to verdier!
+		if (n < 2) throw   // maa ha minst to verdier!
 				new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
 
-		int m = maks(a);  // m er posisjonen til tabellens største verdi
+		int m = maks(a);  // m er posisjonen til tabellens storste verdi
 
-		int nm;     // nm skal inneholde posisjonen til nest største verdi
+		int nm;     // nm skal inneholde posisjonen til nest storste verdi
 
-		if (m == 0)                            // den største ligger først
+		if (m == 0)                            // den storste ligger først
 		{
 			nm = maks(a,1,n);                    // leter i a[1:n>
 		}
-		else if (m == n-1)                     // den største ligger bakerst
+		else if (m == n-1)                     // den storste ligger bakerst
 		{
 			nm = maks(a,0,n-1);                  // leter i a[0:n-1>
 		}
@@ -311,7 +311,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		{
 			int mv = maks(a,0,m);                // leter i a[0:m>
 			int mh = maks(a,m+1,n);              // leter i a[m+1:n>
-			nm = a[mh] > a[mv] ? mh : mv;        // hvem er størst?
+			nm = a[mh] > a[mv] ? mh : mv;        // hvem er storst?
 		}
 
 		return new int[] {m,nm};      // m i posisjon 0 , nm i posisjon 1
@@ -322,17 +322,17 @@ public class Tabell //Samleklasse for tabellmetoder
 	//Programkode 1.2.5 a)
 	{
 		int n = a.length;     // tabellens lengde
-		if (n < 2) throw      // må ha minst to verdier
+		if (n < 2) throw      // maa ha minst to verdier
 				new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
 
-		int m = 0;      // m er posisjonen til største verdi
-		int nm = 1;     // nm er posisjonen til nest største verdi
+		int m = 0;      // m er posisjonen til storste verdi
+		int nm = 1;     // nm er posisjonen til nest storste verdi
 
-		// bytter om m og nm hvis a[1] er større enn a[0]
+		// bytter om m og nm hvis a[1] er storre enn a[0]
 		if (a[1] > a[0]) { m = 1; nm = 0; }
 
-		int maksverdi = a[m];                // største verdi
-		int nestmaksverdi = a[nm];           // nest største verdi
+		int maksverdi = a[m];                // storste verdi
+		int nestmaksverdi = a[nm];           // nest storste verdi
 
 		for (int i = 2; i < n; i++)
 		{
@@ -341,15 +341,15 @@ public class Tabell //Samleklasse for tabellmetoder
 				if (a[i] > maksverdi)
 				{
 					nm = m;
-					nestmaksverdi = maksverdi;     // ny nest størst
+					nestmaksverdi = maksverdi;     // ny nest storst
 
 					m = i;
-					maksverdi = a[m];              // ny størst
+					maksverdi = a[m];              // ny storst
 				}
 				else
 				{
 					nm = i;
-					nestmaksverdi = a[nm];         // ny nest størst
+					nestmaksverdi = a[nm];         // ny nest storst
 				}
 			}
 		} // for
@@ -363,23 +363,23 @@ public class Tabell //Samleklasse for tabellmetoder
 	{
 		int n = a.length;  // tabellens lengde
 
-		// må ha minst to verdier i tabellen
+		// maa ha minst to verdier i tabellen
 		if (a.length < 2) throw new
 				IllegalArgumentException("a.length(" + a.length + ") < 2!");
 
 		int sist = a.length - 1; // siste posisjon i tabellen
 
-		// starter med å se på første og siste verdi i tabellen
-		int m = 0; // første posisjon
+		// starter med aa se paa forste og siste verdi i tabellen
+		int m = 0; // forste posisjon
 		int nm = sist; // siste posisjon
 
-		// m skal være sist hvis a[sist] er større enn a[0]
+		// m skal vaere sist hvis a[sist] er storre enn a[0]
 		if (a[sist] > a[0]) { m = sist; nm = 0; }
 
-		int maksverdi = a[m];  // største verdi
-		int nestmaksverdi = a[nm];  // nest største verdi
+		int maksverdi = a[m];  // storste verdi
+		int nestmaksverdi = a[nm];  // nest storste verdi
 
-		int temp = a[sist];            // tar vare på siste verdi
+		int temp = a[sist];            // tar vare paa siste verdi
 		a[sist] = 0x7fffffff;          // legger tallet 2147483647 sist
 
 		for (int i = 1; ; i++)
@@ -398,7 +398,7 @@ public class Tabell //Samleklasse for tabellmetoder
 				else
 				{
 					nm = i;
-					nestmaksverdi = a[nm]; // ny nest størst
+					nestmaksverdi = a[nm]; // ny nest storst
 				}
 			}
 		} // for
@@ -407,9 +407,9 @@ public class Tabell //Samleklasse for tabellmetoder
 	public static int[] nestMaks3(int[] a)   // en turnering
 	//Programkode 1.2.13 a)
 	{
-		int n = a.length;                // for å forenkle notasjonen
+		int n = a.length;                // for aa forenkle notasjonen
 
-		if (n < 2) // må ha minst to verdier!
+		if (n < 2) // maa ha minst to verdier!
 			throw new IllegalArgumentException("a.length(" + n + ") < 2!");
 
 		int[] b = new int[2*n];          // turneringstreet
@@ -427,7 +427,7 @@ public class Tabell //Samleklasse for tabellmetoder
 				if (tempverdi > nestmaksverdi) nestmaksverdi = tempverdi;
 			}
 
-		return new int[] {maksverdi,nestmaksverdi}; // størst og nest størst
+		return new int[] {maksverdi,nestmaksverdi}; // storst og nest storst
 
 	} // nestMaks
 
@@ -446,7 +446,7 @@ public class Tabell //Samleklasse for tabellmetoder
 
 		int m = Tabell.min(a);   // m er posisjonen til tabellens minste verdi
 
-		int nm = 0;   // nm står for nestmin
+		int nm = 0;   // nm staar for nestmin
 
 		if (m == 0) nm = Tabell.min(a,1,n);              // leter i a[1:n>
 		else if (m == n-1) nm = Tabell.min(a,0,n-1);     // leter i a[0:n-1>
@@ -467,24 +467,24 @@ public class Tabell //Samleklasse for tabellmetoder
 	{
 		int n = a.length;     // tabellens lengde
 
-		if (n < 3)     // må ha minst tre verdier
+		if (n < 3)     // maa ha minst tre verdier
 			throw new IllegalArgumentException("a.length(" + n + ") < 3!");
 
-		int m = 0;      // m er posisjonen til største verdi
-		int nm = 1;     // nm er posisjonen til nest største verdi
-		int tm = 2;     // tm er posisjonen til den tredje største
+		int m = 0;      // m er posisjonen til storste verdi
+		int nm = 1;     // nm er posisjonen til nest storste verdi
+		int tm = 2;     // tm er posisjonen til den tredje storste
 
-		// vi bytter om slik at når vi starter er m er posisjonen til
-		// den største av de tre første, nm er posisjonen til den nest
-		// største og tm posisjonen til den minste av de tre første
+		// vi bytter om slik at naar vi starter er m er posisjonen til
+		// den storste av de tre forste, nm er posisjonen til den nest
+		// storste og tm posisjonen til den minste av de tre forste
 
 		if (a[nm] > a[m]) {int temp = m; m = nm; nm = temp;}
 		if (a[tm] > a[m]) {int temp = tm; tm = m; m = temp;}
 		if (a[tm] > a[nm]) {int temp = tm; tm = nm; nm = temp;}
 
-		int maksverdi = a[m];                // største verdi
-		int nestmaksverdi = a[nm];           // nest største verdi
-		int tredjemaksverdi = a[tm];         // tredje største verdi
+		int maksverdi = a[m];                // storste verdi
+		int nestmaksverdi = a[nm];           // nest storste verdi
+		int tredjemaksverdi = a[tm];         // tredje storste verdi
 
 		for (int i = 3; i < n; i++)
 		{
@@ -493,26 +493,26 @@ public class Tabell //Samleklasse for tabellmetoder
 				if (a[i] > nestmaksverdi)
 				{
 					tm = nm;
-					tredjemaksverdi = nestmaksverdi;  // ny tredje største verdi
+					tredjemaksverdi = nestmaksverdi;  // ny tredje storste verdi
 
 					if (a[i] > maksverdi)
 					{
 						nm = m;
-						nestmaksverdi = maksverdi;      // ny nest størst
+						nestmaksverdi = maksverdi;      // ny nest storst
 
 						m = i;
-						maksverdi = a[m];               // ny størst
+						maksverdi = a[m];               // ny storst
 					}
 					else
 					{
 						nm = i;
-						nestmaksverdi = a[nm];          // ny nest størst
+						nestmaksverdi = a[nm];          // ny nest storst
 					}
 				}
 				else
 				{
 					tm = i;
-					tredjemaksverdi = a[tm];          // ny tredje største verdi
+					tredjemaksverdi = a[tm];          // ny tredje storste verdi
 				}
 			}
 		} // for
@@ -525,11 +525,11 @@ public class Tabell //Samleklasse for tabellmetoder
 	//Programkode 1.3.1 b)
 	{
 		int i = a.length - 2;                    // i starter nest bakerst
-		while (i >= 0 && a[i] > a[i + 1]) i--;   // går mot venstre
+		while (i >= 0 && a[i] > a[i + 1]) i--;   // gaar mot venstre
 		if (i < 0) return false;                 // a = {n, n-1, . . . , 2, 1}
 
 		int j = a.length - 1;                    // j starter bakerst
-		while (a[j] < a[i]) j--;                 // stopper når a[j] > a[i]
+		while (a[j] < a[i]) j--;                 // stopper naar a[j] > a[i]
 		bytt(a,i,j); snu(a,i + 1);         // bytter og snur
 
 		return true;                             // en ny permutasjon
@@ -562,7 +562,7 @@ public class Tabell //Samleklasse for tabellmetoder
 	//Programkode 1.3.3 a)
 	{
 		int antall = 0;                 // antall ombyttinger i tabellen
-		for (int i = 1; i < n; i++)     // går fra 1 til n
+		for (int i = 1; i < n; i++)     // gaar fra 1 til n
 			{
 				if (a[i - 1] > a[i])          // sammenligner to naboverdier
 					{
@@ -611,11 +611,11 @@ public class Tabell //Samleklasse for tabellmetoder
 			bytt(a, i, min(a, i, a.length));  // to hjelpemetoder
 	}
 
-	public static int lineærsøk(int[] a, int verdi) // legges i class Tabell
+	public static int linearsok(int[] a, int verdi) // legges i class Tabell
 	//Programkode 1.3.5 b)
 	{
 		if (a.length == 0 || verdi > a[a.length-1])
-			return -(a.length + 1);  // verdi er større enn den største
+			return -(a.length + 1);  // verdi er storre enn den storste
 
 		int i = 0; for( ; a[i] < verdi; i++);  // siste verdi er vaktpost
 
