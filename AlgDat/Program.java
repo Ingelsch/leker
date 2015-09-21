@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 import hjelpeklasser.*;
 
@@ -8,10 +8,8 @@ public class Program
 {
 	public static void main(String ... args)      // hovedprogram
 	{
-		int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
-		Tabell.utvalgssortering2(a);           // stigende sortering
-		Tabell.snu(a);                        // tabellen snus
-		Tabell.skriv(a);                      // 10 9 8 7 6 5 4 3 2 1
+		//Oppgave1_1_7_1_test.testmakstest(); //
+		Oppgave1_1_7_1.makstest();
 
 	} // main
 
@@ -19,6 +17,9 @@ public class Program
 
 	  
 	/*
+	  	___
+	  	Oppgave1_1_7_1
+	  	Oppgave1_1_7_1.makstest(); // Gir ingen feil
 	  	___
 	  	  int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
   Tabell.utvalgssortering(a);           // stigende sortering
