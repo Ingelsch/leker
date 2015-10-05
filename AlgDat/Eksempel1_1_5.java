@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 public class Eksempel1_1_5
 {

@@ -1,8 +1,6 @@
-package algDat.Oblig1;
+package AlgDat.Oblig1;
 
-/**
- * Created by inge on 14.09.2015.
- */
+
 ///// Oppdatert 26. august 2015 ///////////////
 
 import java.util.*;
@@ -13,16 +11,16 @@ public class Oblig1Test
 	{
 		int antallFeil = 0;
 
-		//antallFeil += oppgave1();
-		//antallFeil += oppgave2();
-		//antallFeil += oppgave3();
-		//antallFeil += oppgave4();
-		//antallFeil += oppgave5();
-		//antallFeil += oppgave6();
-		//antallFeil += oppgave7();
-		//antallFeil += oppgave8();
-		//antallFeil += oppgave9();
-		//antallFeil += oppgave10();
+		antallFeil += oppgave1();
+		antallFeil += oppgave2();
+		antallFeil += oppgave3();
+		antallFeil += oppgave4();
+		antallFeil += oppgave5();
+		antallFeil += oppgave6();
+		antallFeil += oppgave7();
+		antallFeil += oppgave8();
+		antallFeil += oppgave9();
+		antallFeil += oppgave10();
 
 		if (antallFeil == 0)
 		{

@@ -4,7 +4,7 @@ Kristoffer P.Skarrud s239404 HINGDATA14HA
 Simen Dagfinrud s236376 HINGDATA14HA
 Inge L. Schiager s198749 INFORMATIK14HA
  */
-package algDat.Oblig1;
+package AlgDat.Oblig1;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;

@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 import hjelpeklasser.*;
 

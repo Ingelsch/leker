@@ -1,0 +1,122 @@
+﻿1.1.2
+-----
+
+1. 6
+
+3. Hvis den største verdien forekommer flere ganger, vil maks-metoden returnere posisjonen til den første av dem. Hva må endres for at den skal returnere posisjonen til den siste?
+
+	if (a[i] >= a[m]) m = i;
+
+1.1.3
+-----
+
+1. Hvor mange sorteringsalgoritmer kjenner du til?
+
+	Merge sort, bubble sort, bogosort, insertion sort, selection sort, heap sort
+
+2. Gitt en tabell med verdiene 10, 5, 7, 2, 9, 1, 3, 8, 4, 6. Hvor mange grunnleggende operasjoner vil algoritmen i Programkode 1.1.2 utføre på denne tabellen. Se regnskapet over og Eksempel 1.1.3.
+
+    n = 10
+    x = 0
+	5n + x = 50
+
+3. Som oppgave 2, men med verdiene 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
+
+	n = 10; x = 9
+	5n + x = 59
+
+4.	Som oppgave 2, men med verdiene 1, 3, 2, 7, 5, 9, 6, 8, 10, 4.
+
+	n = 10; x = 4
+	5n + x = 54
+
+5.	Lag en metode public static int[] minmaks(int[] a). Den skal ved hjelp av en int-tabell med lengde 2 returnere posisjonene til minste og største verdi i tabellen a. Hvis du har funnet at m1 er posisjonen til den minste og m2 til den største, kan du returnere tabellen b definert ved:   int[] b = {m1, m2}; Hvor mange sammenligninger bruker metoden din?
+
+	Metoden bruker 3n sammenligninger.
+
+6.	Utrykket n! betyr n fakultet og er gitt ved n! = n · (n-1) ·  ·  · 2 · 1 . Lag en metode
+long fak(int n) som regner ut n! . Hvor mange multiplikasjoner utføres i metoden?
+
+	n - 1
+
+1.1.4
+-----
+
+1.	Hvor mange grunnleggende operasjoner utfører Programkode 1.1.4 hvis tabellen a inneholder
+	i) 10, 5, 7, 2, 9, 1, 3, 8, 4, 6
+	ii) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+	iii) 1, 3, 2, 7, 5, 9, 6, 8, 10, 4.
+	Sammenlign med svarene i oppgave 2, 3 og 4 fra Avsnitt 1.1.3.
+
+	public static int maks(int[] a)   // versjon 2 av maks-metoden
+	{
+		int m = 0; // 1
+		int maksverdi = a[0]; 2
+
+		for (int i = 1; i < a.length; i++) // 1 + n + ( n - 1 ) = 2n
+			if (a[i] > maksverdi) // 2 * (n - 1) = 2n - 2
+			{
+			  maksverdi = a[i]; // 2x
+			  m = i; // x
+			}
+		return m; // 1
+	}
+
+	Generelt, der n er antall elementer og x er antall elementer større en foregående:
+		S = 1 + 2 + 2n + 2n - 2 + 2x + x + 1 = 4n + 2 + 3x
+
+	n = 10 => S = 4 * 10 + 2 + 3x = 42 + 3x
+
+	i) x = 0 => S = 42
+	ii) x = 9 => S = 69
+	iii) x = 4 => S = 54
+
+1.1.6
+-----
+
+1.	Vis at Setning 1.1.6 a) stemmer for n = 5. Se på alle de 120 forskjellige permutasjonene av tallene 1, 2, 3, 4 og 5. Flg. observasjon kan forenkle arbeidet: De 24 permutasjonene der 5 står først, inneholder ingen tall som er større enn alle foran. Blant de 24 der 5 står som nr 2, vil det være nøyaktig ett tall (5 selv) som er større enn de foran. Osv.
+
+	Setning 1.1.6 a)  I en tabell med n (n > 1) forskjellige tall er i gjennomsnitt
+	1/2 + 1/3 + 1/4 + . . . . + 1/n  av dem større enn det største av de foran.
+
+	Jeg teller opp tilfellene:
+
+		5 * * * * => 4! * 0 = 0
+		* 5 * * * => 4! * 1 = 24
+		* * 5 * * => 4! * 1 + 12 = 36
+			1 * 5 * * => 3 * 2! = 6
+			2 * 5 * * => 2 * 2! = 4
+			3 * 5 * * => 1 * 2! = 2
+			4 * 5 * * => 0 * 2! = 0
+		* * * 5 * => 4! * 1 + 20 = 44
+			* 1 * 5 * => 3 * 2! = 6
+			* 2 * 5 * => 2! + 2 * 2! - 2 = 4
+			* 3 * 5 * => 2 * 2! + 2! - 2 = 4
+			* 4 * 5 * => 3 * 2! = 6
+		* * * * 5 => 24 * 1 + 26 = 50
+
+	Dermed:
+	(0 + 24 + 36 + 44 + 50) / 5! = 77 / 60 = 1/2 + 1/3 + 1/4 + 1/5
+
+1.1.7
+-----
+1. 	Lag et main-program med metoden makstest der Programkode 1.1.2	skjer?
+
+	Alt er greit.
+
+2.	
+3.	Bruk makstest på de to versjonene i Programkode 1.1.4 og 1.1.5. Da vil det bl.a. komme melding om at det kastes feil unntak for en tom tabell. Hvilket unntak kastes? Gjør om koden slik at rett unntak kastes.
+
+	Kastet ArrayIndexOutOfBoundsException istedenfor NoSuchElementException ved tom tabell.
+
+	Programkode 1.1.5 gir feil svar hvis den største verdien ligger flere steder. Rett opp koden! Se også Oppgave 2 i Avsnitt 1.1.5.
+
+1.1.8
+-----
+
+
+5.	Gjør som i Oppgave 2, men bruk randPerm-versjonen i Programkode 1.1.8 c). Er det stor forskjell på de to versjonene?
+7.	I randPerm-versjonen i Programkode 1.1.8 c) brukes det en boolsk hjelpetabell. Gjør om metoden slik at den bruker samme idé, men uten hjelpetabellen. Første kall på nextInt(n) gir en indeks k. Vi legger så inn 1 i a[k]. Neste kall på nextInt(n) gir en ny indeks k. Hvis a[k] ikke er 0, kaller vi nextInt(n) på nytt. Hvis derimot a[k] er 0, legger vi inn 2 i a[k]. Osv. til hele a er fylt opp.
+8.	Sjekk at den versjonen av randPerm som står i Programkode 1.1.8 e) virker som den skal. Se Oppgave 1. Du kan f.eks. omdøpe den første versjonen til randPerm1, den andre til randPerm2 og denne til randPerm3.
+9.	Gjør som i Oppgave 2, men bruk randPerm-versjonen i Programkode 1.1.8 e). Er det stor forskjell på de tre versjonene? Hvilken av dem bør vi ta vare på og bruke senere når vi trenger en slik metode?
+13.	Java har ingen ferdig metode som lager en tilfeldig heltallstabell. En omvei: Legg tallene fra 1 til n i en ArrayList<Integer>, bruk metoden shuffle i klassen Collections og hent så tallene fra listen og legg dem over i en int-tabell. Prøv dette!

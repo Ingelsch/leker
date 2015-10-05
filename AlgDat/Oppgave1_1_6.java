@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 public class Oppgave1_1_6
 {
@@ -36,7 +36,7 @@ public class Oppgave1_1_6
 	public static void main(String[] args)
 	{
 
-    System.out.println("n må være minst: " + eulertest(0.577d, 0.578d));
+    System.out.println("n må være minst: " + eulertest(0.577d, 0.578d) + "\n");
     
     /* 5. Lag en programbit som gir resultatene i Tabell 1.1.6:
     n	10	100	1.000	10.000	100.000	1.000.000   10.000.000

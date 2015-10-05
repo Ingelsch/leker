@@ -8,10 +8,10 @@ public class Program
 {
 	public static void main(String ... args)      // hovedprogram
 	{
-		//Oppgave1_1_7_1_test.testmakstest(); //
-		Oppgave1_1_7_1.makstest();
+		int n = 3;
+		System.out.println("Fakultetet av " + n + " blir: \n" + Oppgave1_1_3_6.fak(n));
 
-	} // main
+	} // Main
 
 
 
@@ -22,9 +22,9 @@ public class Program
 	  	Oppgave1_1_7_1.makstest(); // Gir ingen feil
 	  	___
 	  	  int[] a = {7,5,9,2,10,4,1,8,6,3};     // en usortert heltallstabell
-  Tabell.utvalgssortering(a);           // stigende sortering
-  Tabell.snu(a);                        // tabellen snus
-  Tabell.skriv(a);                      // 10 9 8 7 6 5 4 3 2 1
+		  Tabell.utvalgssortering(a);           // stigende sortering
+		  Tabell.snu(a);                        // tabellen snus
+		  Tabell.skriv(a);                      // 10 9 8 7 6 5 4 3 2 1
 	  	___
 	  	  int[] a = {5, 9, 6, 10, 2, 7, 3, 8, 4, 1};          // en heltallstabell
   System.out.println(Arrays.toString(a));             // skriver ut
@@ -68,7 +68,7 @@ public class Program
   System.out.println("Maks3-metoden: " + tid + " millisek");
 	  	___
 
-	  		public static void main(String ... args)      // hovedprogram
+	  		public static void Main(String ... args)      // hovedprogram
 	{
 		int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
 		for (int k : a) System.out.print(k + " ");  // skriver ut a
@@ -77,14 +77,14 @@ public class Program
 
 		System.out.println("\nStørste verdi ligger på plass " + m);
 
-	} // main
+	} // Main
 	  	___
 
 				//Oppgaver til Avsnitt 1.2.3, Oppgave 2 - andre del
 
 		//Her er det satt opp flere mulige kall. For å få feilmeldinger av samme type som nedenfor, må ett og ett av kallene utføres:
 
-		/*public static void main(String[] args) throws IOException
+		/*public static void Main(String[] args) throws IOException
 		{
 			int[] a = Tabell.randPerm(10);
 			int[] c = null;

@@ -1,4 +1,4 @@
-package algDat;
+package AlgDat;
 
 import java.util.OptionalInt;
 
