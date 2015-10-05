@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="148c3187-1a39-4691-b616-2c18bc45a9e8" name="Default" comment="riktig pakkenavn">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Program.java" afterPath="$PROJECT_DIR$/AlgDat/Program.java" />
-    </list>
-    <list id="4e696b27-0a10-4255-8774-6121d967ed33" name="Rejected commit: Default" comment="riktig pakkenavn">
-      <change type="DELETED" beforePath="C:\Users\inge\IdeaProjects\leker\AlgDat\Oppgave1_1_7.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/AlgDatSetup.java" afterPath="$PROJECT_DIR$/AlgDat/AlgDatSetup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_2.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_3rev.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_3rev.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_5.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7a.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7a.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7a2oppg2.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7a2oppg2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7b.java" afterPath="$PROJECT_DIR$/AlgDat/Eksempel1_1_7b.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Hello.java" afterPath="$PROJECT_DIR$/AlgDat/Hello.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oblig1/Oblig1.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig1/Oblig1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oblig1/Oblig1Test.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig1/Oblig1Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_2_2.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_2_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_2.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_5.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_5rev.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_5rev.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_6.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_3_6.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_5_3.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_5_3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgave1_1_6.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgave1_1_6.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oppgaver1_2_13_1.java" afterPath="$PROJECT_DIR$/AlgDat/Oppgaver1_2_13_1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/forelesningsnotater.txt" afterPath="$PROJECT_DIR$/AlgDat/forelesningsnotater.txt" />
-    </list>
+    <list default="true" id="148c3187-1a39-4691-b616-2c18bc45a9e8" name="Default" comment="riktig pakkenavn" />
+    <list id="4e696b27-0a10-4255-8774-6121d967ed33" name="Rejected commit: Default" comment="riktig pakkenavn" />
     <list id="a9a36024-593d-4360-b06e-3453fbbde97d" name="Rejected commit: Default (2)" comment="riktig pakkenavn" />
-    <list id="a0fd89b9-988b-4357-bdf7-b0fd96000e4b" name="Failed commit: Default" comment="Oblig2 oppgave0 ok">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Beholder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/DobbeltLenketListe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Liste.java" />
-    </list>
+    <list id="a0fd89b9-988b-4357-bdf7-b0fd96000e4b" name="Failed commit: Default" comment="Oblig2 oppgave0 ok" />
     <ignored path="leker.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/AlgDat/Oblig1/Oblig1Test.java" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/AlgDat/Oblig2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5145798">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding>
                 <element signature="e#127#128#0" expanded="true" />
                 <element signature="e#182#183#0" expanded="true" />
@@ -260,66 +230,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="s198749" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hjelpeklasser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlgDat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="leker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlgDat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Oblig2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -607,7 +517,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1011,7 +921,7 @@
     <entry file="file://$PROJECT_DIR$/AlgDat/Oblig2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5145798">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
             <element signature="e#127#128#0" expanded="true" />
             <element signature="e#182#183#0" expanded="true" />
