@@ -4,7 +4,7 @@ public class Diverse
 {
 
 	public static boolean FeilSvar(int num)
-	//Gir feil svar for num < 0
+	//Gir feil svar for num < 0.
 	{
 		return num % 2 == 1;
 	}

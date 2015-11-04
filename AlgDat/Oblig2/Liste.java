@@ -5,8 +5,7 @@ import java.util.Iterator;
 /**
  * Created by inge on 05.10.2015.
  */
-public interface Liste
-		<T> extends Beholder<T>
+public interface Liste<T> extends Beholder<T>
 {
 	public boolean leggInn(T verdi);           // Nytt element bakerst
 	public void leggInn(int indeks, T verdi);  // Nytt element på plass indeks
@@ -28,8 +27,26 @@ public interface Liste
 
 	public default void indeksKontroll(int indeks, boolean leggInn)
 	{
-		if (indeks < 0 ? true : (leggInn ? indeks > antall() : indeks >= antall()))
-			throw new IndexOutOfBoundsException(melding(indeks));
+		if (indeks < 0)
+		{
+			if (true)
+			{
+				throw new IndexOutOfBoundsException(melding(indeks));
+			}
+		}
+		else if (leggInn)
+		{
+			if ((indeks > antall()))
+			{
+				throw new IndexOutOfBoundsException(melding(indeks));
+			}
+		}
+		else
+		{
+			if ((indeks >= antall()))
+			{
+				throw new IndexOutOfBoundsException(melding(indeks));
+			}
+		}
 	}
-
-}
+}  // Liste2

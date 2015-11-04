@@ -74,7 +74,7 @@ Forelesning 26/8-14
 Nest største verdi:
 * Maksmetode som kan søke i intervaller: Tabell.maks(int[] a, int fra, int til)
 * Nest største: først finne maks, så finne nest største til venstre eller høyre for maks
-  - Edge cases: størst først, størst sist, kun ett element, tom liste
+  - Edge cases: størst først, størst sist, kun ett element, tom liste2
 * Ny strategi: nest største med én enkelt iterasjon av tabellen
 
 Effektivitet:

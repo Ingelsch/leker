@@ -13,6 +13,6 @@ public interface Kø<T>              // eng: Queue
 	public boolean tom();             // eng: isEmpty     er køen tom?
 	public void nullstill();          // eng: clear       tømmer køen
 
-} // interface Kø
+} // interface Kø.
 
 

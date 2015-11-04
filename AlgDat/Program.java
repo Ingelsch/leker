@@ -1,6 +1,6 @@
 package AlgDat;
 
-import hjelpeklasser.*;
+import hjelpeklasser.Tabell;
 
 import java.util.Arrays;
 
@@ -8,10 +8,16 @@ public class Program
 {
 	public static void main(String ... args)      // hovedprogram
 	{
-		int n = 3;
-		System.out.println("Fakultetet av " + n + " blir: \n" + Oppgave1_1_3_6.fak(n));
+		Integer[] a = Tabell.randPermInteger(10);
+		System.out.println(Arrays.toString(a));
+		// En mulig utskrift: [7, 1, 8, 2, 10, 3, 4, 6, 5, 9]
 
-	} // Main
+		Tabell.innsettingssortering(a);
+		System.out.println(Arrays.toString(a));
+		// Utskrift: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+	} // Main2
 
 
 
@@ -68,7 +74,7 @@ public class Program
   System.out.println("Maks3-metoden: " + tid + " millisek");
 	  	___
 
-	  		public static void Main(String ... args)      // hovedprogram
+	  		public static void Main2(String ... args)      // hovedprogram
 	{
 		int[] a = Tabell.randPerm(20);              // en tilfeldig tabell
 		for (int k : a) System.out.print(k + " ");  // skriver ut a
@@ -77,14 +83,14 @@ public class Program
 
 		System.out.println("\nStørste verdi ligger på plass " + m);
 
-	} // Main
+	} // Main2
 	  	___
 
 				//Oppgaver til Avsnitt 1.2.3, Oppgave 2 - andre del
 
 		//Her er det satt opp flere mulige kall. For å få feilmeldinger av samme type som nedenfor, må ett og ett av kallene utføres:
 
-		/*public static void Main(String[] args) throws IOException
+		/*public static void Main2(String[] args) throws IOException
 		{
 			int[] a = Tabell.randPerm(10);
 			int[] c = null;

@@ -5,7 +5,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        System.out.println("Binæartrær");
+        System.out.println("Binæartrær.");
         System.out.println("Et perfekt tre med høyde h har 2^(h+1)-1 noder.");
         System.out.println("Et komplett binærtre med n noder har høyde h = ?log2(n)?");
 		System.out.println("Definisjon 1.2.11 a)  Et binærtre kalles perfekt (eng: a perfect binary tree) hvis alle nivåene i treet inneholder så mange noder som det er plass til.");

@@ -60,7 +60,7 @@ public class TabellKø<T> implements Kø<T>
 
 	public T taUt()
 	{
-		if (fra == til) throw new         // sjekker om køen er tom
+		if (fra == til) throw new         // sjekker om køen er tom.
 				NoSuchElementException("Køen er tom!");
 
 		T temp = a[fra];                  // tar vare på den første i køen
