@@ -11,7 +11,6 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class DobbeltLenketListe<T> implements Liste<T>
@@ -139,7 +138,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 			hale = hale.neste = new Node<>(verdi, hale, null);
 		}
 		antall++;
+		antallEndringer++;
 		return true;
+
 	}
 
 	@Override
@@ -295,7 +296,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 		{
 			if (verdi.equals(n.verdi))
 			{
-				if (n.forrige == null && n.neste == null)
+				if ((n.forrige == null) && (n.neste == null))
 				{
 					hode = null;
 					hale = null;
@@ -508,18 +509,18 @@ public class DobbeltLenketListe<T> implements Liste<T>
 		sann/true, verdien til denne returneres og denne flyttes til den neste node.
 		*/
 		{
-			if (forventetAntallEndringer != antallEndringer)
-			{
-				throw new ConcurrentModificationException();
-			}
 			if (!hasNext())
 			{
 				throw new NoSuchElementException();
 			}
+			if (forventetAntallEndringer != antallEndringer)
+			{
+				throw new ConcurrentModificationException();
+			}
+
 			Node<T> temp = denne;
 			denne = denne.neste;
 			fjernOK = true;
-			forventetAntallEndringer++;
 			return temp.verdi;
 		}
 
@@ -553,28 +554,28 @@ public class DobbeltLenketListe<T> implements Liste<T>
 			}
 			else
 			{
-				fjernOK = false;
-				if (antall == 1)
-				{
-					hode = hale = null;
-				}
-				else if (denne == null)
-				{
-					hale = hale.forrige;
-					hale.neste = null;
-				}
-				else if (denne.forrige == hode)
-				{
-					hode = hode.neste;
-					hode.forrige = null;
-				}
-				else
-				{
-					denne.forrige.forrige.neste = denne;
-					denne.forrige = denne.forrige.forrige;
-				}
-				antall--;
-				forventetAntallEndringer = ++antallEndringer;
+			fjernOK = false;
+			if (antall == 1)
+			{
+				hode = hale = null;
+			}
+			else if (denne == null)
+			{
+				hale = hale.forrige;
+				hale.neste = null;
+			}
+			else if (denne.forrige == hode)
+			{
+				hode = hode.neste;
+				hode.forrige = null;
+			}
+			else
+			{
+				denne.forrige.forrige.neste = denne;
+				denne.forrige = denne.forrige.forrige;
+			}
+			antall--;
+			forventetAntallEndringer = ++antallEndringer;
 			}
 		}
 
