@@ -1,5 +1,8 @@
 package AlgDat.Oblig2;
 
+import java.util.Iterator;
+
+
 /**
  * Created by inge on 05.10.2015.
  */

@@ -6,29 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="148c3187-1a39-4691-b616-2c18bc45a9e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Oblig2Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MOVED" beforePath="C:\Users\inge\IdeaProjects\leker\AlgDat\Oblig2\main.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe$DobbeltLenketListeIterator.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe$DobbeltLenketListeIterator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe$Node.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe$Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/DobbeltLenketListe.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/Liste.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/Liste.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/Main.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Oblig2/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/Program.class" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/Program.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/hjelpeklasser/Tabell.class" afterPath="$PROJECT_DIR$/out/production/leker/hjelpeklasser/Tabell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hjelpeklasser/Beholder.java" afterPath="$PROJECT_DIR$/hjelpeklasser/Beholder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/no/hioa/s198749/Diverse.java" afterPath="$PROJECT_DIR$/no/hioa/s198749/Diverse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oblig2/DobbeltLenketListe.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/DobbeltLenketListe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hjelpeklasser/Funksjon.java" afterPath="$PROJECT_DIR$/hjelpeklasser/Funksjon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hjelpeklasser/Kø.java" afterPath="$PROJECT_DIR$/hjelpeklasser/Kø.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oblig2/Liste.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/Liste.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/no/hioa/s198749/Main.java" afterPath="$PROJECT_DIR$/no/hioa/s198749/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Program.java" afterPath="$PROJECT_DIR$/AlgDat/Program.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hjelpeklasser/TabellKø.java" afterPath="$PROJECT_DIR$/hjelpeklasser/TabellKø.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/forelesningsnotater.txt" afterPath="$PROJECT_DIR$/AlgDat/forelesningsnotater.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/AlgDat/forelesningsnotater.txt" afterPath="$PROJECT_DIR$/out/production/leker/AlgDat/forelesningsnotater.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/leker/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/leker/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlgDat/Oblig2/main.java" afterPath="$PROJECT_DIR$/AlgDat/Oblig2/main.java" />
     </list>
     <list id="4e696b27-0a10-4255-8774-6121d967ed33" name="Rejected commit: Default" comment="riktig pakkenavn" />
     <list id="a9a36024-593d-4360-b06e-3453fbbde97d" name="Rejected commit: Default (2)" comment="riktig pakkenavn" />
@@ -63,24 +41,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Beholder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Beholder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hjelpeklasser/Beholder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.73391306">
               <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/no/hioa/s198749/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2877698">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -692,7 +660,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446161538538</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Uke 44, fra pc">
+      <created>1446643995655</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446643995655</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -710,12 +684,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329718" sideWeight="0.49791667" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19577308" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19577308" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14425163" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295688" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24307036" sideWeight="0.47510093" order="0" side_tool="false" content_ui="combo" />
@@ -1019,7 +993,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlgDat/Oblig2/Main.java">
+    <entry file="file://$PROJECT_DIR$/AlgDat/Oblig2/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
@@ -1162,21 +1136,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/no/hioa/s198749/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24110219">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hjelpeklasser/Beholder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.73391306">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/no/hioa/s198749/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2877698">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
