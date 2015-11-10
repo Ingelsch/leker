@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 
 /**
- * Created by inge on 05.10.2015.
+ * Created by inge on 05.10.2015
  */
 public class Main
 {
