@@ -58,29 +58,39 @@ public class ObligSBinTre<T> implements Beholder<T>
 	{
 		Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
-		Node<T> p = rot, q = null, forelder = null;               // p starter i roten
+		Node<T> p = rot, q = null;               // p starter i roten
 		int cmp = 0;                             // hjelpevariabel
 
 		while (p != null)       // fortsetter til p er ute av treet
-		{
-			q = forelder = p;                                 // q er forelder til p
-			cmp = comp.compare(verdi,p.verdi);     // bruker komparatoren
-			p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
-		}
+			{
+				q = p;                                 // q er forelder til p
+				cmp = comp.compare(verdi,p.verdi);     // bruker komparatoren
+				p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
+			}
 
 		// p er nå null, dvs. ute av treet, q er den siste vi passerte
 
-		p = new Node<>(verdi,null,null,q);                   // oppretter en ny node
+		p = new Node<>(verdi);                  // oppretter en ny node
 
 		if (q == null) rot = p;                  // p blir rotnode
 		else if (cmp < 0) q.venstre = p;         // venstre barn til q
 		else q.høyre = p;                        // høyre barn til q
+
+		if (q != null)
+			{
+				p.forelder = q;
+			}
+		else
+			{
+				p.forelder = null;
+			}
 
 		antall++;                                // én verdi mer i treet
 		return true;                             // vellykket innlegging
 	}
 
 	@Override
+	/*avgjør om en verdi ligger i treet eller ikke*/
 	public boolean inneholder(T verdi)
 	{
 		if (verdi == null) return false;
@@ -110,14 +120,46 @@ public class ObligSBinTre<T> implements Beholder<T>
 	}
 
 	@Override
+	/*returnerer antall verdier i treet*/
 	public int antall()
 	{
 		return antall;
 	}
 
+	/*skal returnere antall forekomster av verdi i treet. Det er
+	tillatt med duplikater og det betyr at en verdi kan forekomme
+	flere ganger. Hvis verdi ikke er i treet, skal metoden returnere 0.
+	 Lag så trær der du legger inn flere like verdier og sjekk at
+	 metoden din gir korrekt svar.*/
 	public int antall(T verdi)
 	{
-		throw new UnsupportedOperationException("Ikke kodet ennå!");
+		if (verdi == null)
+			{
+				return 0;
+			}
+
+		int a=0; //oppstartsverdi
+
+		Node<T> p = rot;
+		while (p != null)
+			{
+				int cmp = comp.compare(verdi, p.verdi);
+				if (cmp < 0)
+					{
+						p = p.venstre; //går til venstre
+					}
+				else if (cmp > 0)
+					{
+						p = p.høyre; //går til høyre
+					}
+				else
+					{
+						a++;
+						p = p.høyre;
+					}
+			}
+
+		return a;
 	}
 
 	@Override
@@ -129,18 +171,70 @@ public class ObligSBinTre<T> implements Beholder<T>
 	@Override
 	public void nullstill()
 	{
+
 		throw new UnsupportedOperationException("Ikke kodet ennå!");
 	}
 
+	/*Du kan ta som gitt at parameteren p ikke er null.
+	Den skal returnere den noden som kommer etter p i inorden.
+	Hvis p er den siste i inorden, skal metoden returne null.
+	Husk at hvis p har et høyre subtre, så vil den neste i inorden
+	være den noden som ligger lengst ned til venstre i det subtreet.
+	Hvis p ikke har et høyre subtre og p ikke er den siste, vil den neste
+	i inorden være høyere opp i treet.
+	Den finner du ved hjelp forelder-pekerne.*/
 	private static <T> Node<T> nesteInorden(Node<T> p)
 	{
-		throw new UnsupportedOperationException("Ikke kodet ennå!");
+		if (p == null)
+			{
+				return null;
+			}
+		if (p.høyre != null)
+			{
+				return finnLaveste(p.høyre);
+			}
+		Node x = p.forelder;
+		Node y = p;
+		while (y != null && x == y.høyre)
+		{
+			x = y;
+			y = y.forelder;
+		}
+		return y;
+
+	}
+
+	/* hjelpemetode til nesteInOrden*/
+	private static<T> Node<T> finnLaveste(Node<T> p){
+		if (p == null)
+			return null;
+		if (p.venstre != null)
+			return finnLaveste(p.venstre);
+		return p;
 	}
 
 	@Override
+	/*Den skal returnere en tegnstreng med treets verdier i inorden.
+	Verdiene skal rammes inn av [ og ]. Mellom verdiene (hvis det er flere)
+	skal det være komma og mellomrom. Hvis treet er tomt, skal strengen
+	inneholde "[]". Du skal bruke verken rekursjon eller hjelpestakk.
+	Du skal bruke hjelpemetoden nesteInorden(). Start med (en egen while-løkke)
+	for å finne den første noden p i inorden. Deretter vil gjentatte kall (en løkke)
+	  på setningen:
+	 p = nesteInorden(p); gi den neste, osv. til p blir null.*/
 	public String toString()
 	{
-		throw new UnsupportedOperationException("Ikke kodet ennå!");
+		StringJoiner s = new StringJoiner(", ","[ "," ]");
+		Node p = rot;
+		if (p != null)
+			{
+				while (p.venstre != null)
+					{
+						p = finnLaveste(p);
+
+					}
+
+			}
 	}
 
 	public String omvendtString()
