@@ -20,8 +20,8 @@ public class ObligSBinTre<T> implements Beholder<T>
 			høyre = h;
 			this.forelder = forelder;
 		}
-
-		private Node(T verdi, Node<T> forelder)  // konstruktør
+		// konstruktør
+		private Node(T verdi, Node<T> forelder)
 		{
 			this(verdi, null, null, forelder);
 		}
@@ -96,7 +96,6 @@ public class ObligSBinTre<T> implements Beholder<T>
 	/*2. avgjør om en verdi ligger i treet eller ikke*/
 	public boolean inneholder(T verdi)
 	{
-
 		Objects.requireNonNull(verdi);
 
 		Node<T> p = rot;
@@ -158,7 +157,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 			return false;   // finner ikke verdi
 		}
 
-		if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
+		if ((p.venstre == null) || (p.høyre == null))  // Tilfelle 1) og 2)
 		{
 			Node<T> b = (p.venstre != null) ? p.venstre : p.høyre;  // b for barn
 			if (p == rot)
@@ -169,21 +168,24 @@ public class ObligSBinTre<T> implements Beholder<T>
 					b.forelder = null;
 				}
 			}
-			else if (p == q.venstre)
-			{
-				if (b != null)
-				{
-					b.forelder = q;
-				}
-				q.venstre = b;
-			}
 			else
 			{
-				if (b != null)
+				if (p == q.venstre)
 				{
-					b.forelder = q;
+					if (b != null)
+					{
+						b.forelder = q;
+					}
+					q.venstre = b;
 				}
-				q.høyre = b;
+				else
+				{
+					if (b != null)
+					{
+						b.forelder = q;
+					}
+					q.høyre = b;
+				}
 			}
 		}
 		else  // Tilfelle 3)
@@ -208,10 +210,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 			else
 			{
 				s.høyre = r.høyre;
-				if (p.høyre != null)
-				{
-					p.høyre.forelder = p;
-				}
+				p.høyre.forelder = p;
 			}
 		}
 
@@ -337,7 +336,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 		}
 		else
 		{
-			while (p.forelder != null && p.forelder.høyre == p)
+			while ((p.forelder != null) && (p.forelder.høyre == p))
 			{
 				p = p.forelder;
 			}
@@ -377,7 +376,6 @@ public class ObligSBinTre<T> implements Beholder<T>
 				s.add(p.verdi.toString());
 			}
 		}
-
 		return s.toString();
 	}
 
@@ -396,7 +394,6 @@ public class ObligSBinTre<T> implements Beholder<T>
 		StringJoiner s = new StringJoiner(", ", "[", "]");
 		if (!tom())            // tomt tre
 		{
-
 			Stack<Node<T>> stakk = new Stack<>();
 			Node<T> p = rot;   // starter i roten og går til venstre
 			for (; p.høyre != null; p = p.høyre)
@@ -459,6 +456,25 @@ public class ObligSBinTre<T> implements Beholder<T>
 		private T verdi = null;
 	}
 
+	/*6. skal returnere en tegnstreng med grenens verdier. Tegnstrengen skal som vanlig være «innrammet» av
+	hakeparentesene [ og ]. Verdiene skal (hvis det er flere) være adskilt med komma og mellomrom. Hvis treet
+	er tomt skal kun "[]" returneres.
+	b) skal gi den lengste grenen, dvs. grenen som ender i den bladnoden som ligger lengst ned i treet. Hvis det
+	er flere lengste grener, skal den av dem som ligger lengst til høyre returneres (Hint om lengst gren: Er det
+	noen av traverseringene (pre-, in-, post- eller nivåorden) som stopper i den aktuelle noden?). Pass på at hvis
+	treet har kun én gren, så er denne grenen både høyre gren og lengste gren. Hvis treet har kun én node
+	(kun rotnoden), er dette også en gren.*/
+	public String lengstGren()
+	{
+		if (tom())
+		{
+			return "[]";
+		}
+		BladNode<T> blad = new BladNode<>();
+		lengstGren(rot, 0, blad);
+		return gren(blad.verdi);
+	}
+
 	private static <T> void lengstGren(Node<T> p, int nivå, BladNode<T> blad)
 	{
 		if ((p.venstre == null) && (p.høyre == null))
@@ -477,25 +493,6 @@ public class ObligSBinTre<T> implements Beholder<T>
 		{
 			lengstGren(p.høyre, nivå + 1, blad);
 		}
-	}
-
-	/*6. skal returnere en tegnstreng med grenens verdier. Tegnstrengen skal som vanlig være «innrammet» av
-	hakeparentesene [ og ]. Verdiene skal (hvis det er flere) være adskilt med komma og mellomrom. Hvis treet
-	er tomt skal kun "[]" returneres.
-	b) skal gi den lengste grenen, dvs. grenen som ender i den bladnoden som ligger lengst ned i treet. Hvis det
-	er flere lengste grener, skal den av dem som ligger lengst til høyre returneres (Hint om lengst gren: Er det
-	noen av traverseringene (pre-, in-, post- eller nivåorden) som stopper i den aktuelle noden?). Pass på at hvis
-	treet har kun én gren, så er denne grenen både høyre gren og lengste gren. Hvis treet har kun én node
-	(kun rotnoden), er dette også en gren.*/
-	public String lengstGren()
-	{
-		if (tom())
-		{
-			return "[]";
-		}
-		BladNode<T> blad = new BladNode();
-		lengstGren(rot, 0, blad);
-		return gren(blad.verdi);
 	}
 
 	private String gren(T bladnodeverdi)
@@ -543,7 +540,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 					}
 					p = p.venstre;
 				}
-				else if (p.høyre != null)
+				else
 				{
 					p = p.høyre;
 				}
@@ -576,7 +573,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 		return stringTabell;
 	}
 
-	/*Den skal returnere en tegnstreng med verdiene i bladnodene. Tegnstrengen skal se ut som vanlig
+	/*8. Den skal returnere en tegnstreng med verdiene i bladnodene. Tegnstrengen skal se ut som vanlig
 	(med [ og ] og med komma og mellomrom). Her skal du bruke en rekursiv hjelpemetode som traverserer treet.
 	Bladnodeverdiene skal i tegnstrengen stå i rekkefølge fra venstre mot høyre. */
 	public String bladnodeverdier()
@@ -673,8 +670,8 @@ public class ObligSBinTre<T> implements Beholder<T>
 			{
 				throw new NoSuchElementException("Ingen elementer i treet");
 			}
-
 			T verdi = p.verdi;
+
 			p = p.forelder;
 			removeOK = true;
 
@@ -682,7 +679,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 			{
 				return blad.verdi;
 			}
-			while ((p != null && p.høyre == null) || (p != null && comp.compare(verdi, p.høyre.verdi) == 0))
+			while ((p != null && p.høyre == null) || ((p != null) && (comp.compare(verdi, p.høyre.verdi) == 0)))
 			{
 				verdi = p.verdi;
 				p = p.forelder;
@@ -698,13 +695,19 @@ public class ObligSBinTre<T> implements Beholder<T>
 
 				while (p.venstre != null || p.høyre != null)
 				{
-					while (p.venstre != null)
+					if (p.venstre != null)
+					{
 						p = p.venstre;
-					if (p.høyre != null)
+					}
+					else
 					{
 						p = p.høyre;
 					}
 				}
+			}
+			else
+			{
+				return blad.verdi;
 			}
 			return blad.verdi;
 		}
@@ -723,26 +726,23 @@ public class ObligSBinTre<T> implements Beholder<T>
 			{
 				throw new IllegalStateException("Kan ikke fjernes");
 			}
-			removeOK = false;
-
-			antall--;
-
 			if (blad == q)
 			{
 				blad = q = rot = null;
-				return;
 			}
 			else if (blad.forelder != null)
 			{
-				if (blad.forelder.venstre != null && blad.forelder.venstre == blad)
+				if ((blad.forelder.venstre != null) && (blad.forelder.venstre == blad))
 				{
 					blad.forelder.venstre = null;
 				}
-				else if (blad.forelder.høyre != null && blad.forelder.høyre == blad)
+				else if ((blad.forelder.høyre != null) && (blad.forelder.høyre == blad))
 				{
 					blad.forelder.høyre = null;
 				}
 			}
+			removeOK = false;
+			antall--;
 		}
 
 	} // BladnodeIterator
