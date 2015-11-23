@@ -1,4 +1,4 @@
-package AlgDat;
+package AlgDat.Oppgaver;
 
 public class Eksempel1_1_2
 {

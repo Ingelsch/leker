@@ -1,6 +1,7 @@
-package AlgDat;
+package AlgDat.Oppgaver;
 
-public class Eksempel1_1_7a
+
+public class Eksempel1_1_7a2oppg2
 {
 	public static int maks(int[] a)  // a er en heltallstabell
 	  {
@@ -18,11 +19,21 @@ public class Eksempel1_1_7a
 
 	  } // maks
 	  
+	/*Utvid metoden makstest. 
+	 * Bruk tabeller der den største er først, er sist og forekommer flere steder. 
+	 * Bruk en tabell med kun én verdi, kun to verdier som er ulike og kun to verdier som er like. 
+	 * Lag en test for en null-tabell. La også makstest returnere antall feil.*/
+	
 	public static void makstest()
 	  {
-	    int[] a = {8,3,5,7,9,6,10,2,1,4};  // maksverdien 10 er i posisjon 6
+	    //int[] a = {10,3,5,7,9,6,8,2,1,4};   // maksverdien 10 er i posisjon 0
+	    //int[] a = {8,3,5,7,9,6,10,2,1,4};   // maksverdien 10 er i posisjon 6
+	    //int[] a = {8,3,5,7,9,6,4,2,1,10};   // maksverdien 10 er i posisjon 10
+	    //int[] a = {5}; 						// kun en verdi
+	    int[] a = {8,3}; 					// to ulike
+	    //int[] a = {6,6}; 					// to like
 
-	    if (maks(a) != 6)  // kaller maks-metoden
+	    if (maks(a) != 0)  // kaller maks-metoden
 	      System.out.println("Kodefeil: Gir feil posisjon for maksverdien!");
 
 	    a = new int[0];  // en tom tabell, lengde lik 0
@@ -32,10 +43,10 @@ public class Eksempel1_1_7a
 	    {
 	      maks(a);  // kaller maks-metoden
 	    }
-	    catch (Exception e)
+	    catch (Exception e1)
 	    {
 	      unntak = true;
-	      if (!(e instanceof java.util.NoSuchElementException))
+	      if (!(e1 instanceof java.util.NoSuchElementException))
 	        System.out.println("Kodefeil: Feil unntak for en tom tabell!");
 	    }
 

@@ -5,4 +5,4 @@
  * @author inge
  *
  */
-package algDat;
+package AlgDat.Oppgaver;

@@ -1,13 +1,12 @@
-package AlgDat;
+package AlgDat.Oppgaver;
 
-
-public class Oppgave1_1_7_1_test
+public class Oppgave1_1_7_1
 {
-	public static int maks(int[] a) // a er en heltallstabell
+	public static int maks(int[] a)  // a er en heltallstabell
 	{
 		if (a.length < 1)
 		{
-			throw new java.util.NoSuchElementException("a er tom");
+			throw new java.util.NoSuchElementException("a er tom"); //ArrayIndexOutOfBoundsException NoSuchElementException
 		}
 
 		int m = 0;  // indeks til største verdi
@@ -24,14 +23,19 @@ public class Oppgave1_1_7_1_test
 
 	} // maks
 
-	public static void testmakstest()
+	public static void makstest()
+	/*2.	Utvid metoden makstest. Bruk tabeller
+		 * der den største er først, er sist og forekommer flere steder.
+	     * Bruk en tabell med kun én verdi, kun to verdier som er ulike og kun to verdier som er like.
+	     * Lag en test for en null-tabell. La også makstest returnere antall feil.*/
 	{
 		int[] a = {8, 3, 5, 7, 9, 6, 10, 2, 1, 4};  // maksverdien 10 er i posisjon 6
 
-		if (maks(a) != 6) // kaller maks-metoden
+		if (maks(a) != 6)  // kaller maks-metoden
 		{
 			System.out.println("Kodefeil: Gir feil posisjon for maksverdien!");
 		}
+
 
 		a = new int[0];  // en tom tabell, lengde lik 0
 		boolean unntak = false;
@@ -55,4 +59,3 @@ public class Oppgave1_1_7_1_test
 		}
 	}
 }
-

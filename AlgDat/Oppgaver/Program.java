@@ -1,4 +1,4 @@
-package AlgDat;
+package AlgDat.Oppgaver;
 
 import hjelpeklasser.Tabell;
 
