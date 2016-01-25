@@ -534,7 +534,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 	}
 
 	// Alternativ og mer effektiv måte
-	private void grener2(Node<T> p, Liste<String> liste, Toveiskø<T> gren)
+	/*private void grener2(Node<T> p, Liste<String> liste, Toveiskø<T> gren)
 	{
 		gren.leggInnSist(p.verdi);
 
@@ -569,7 +569,7 @@ public class ObligSBinTre<T> implements Beholder<T>
 			s[i++] = t;
 		}
 		return s;
-	}
+	}*/
 
 	public String bladnodeverdier()
 	{

@@ -30,7 +30,7 @@ public class Oblig1 {
 		if (a.length < 1) {
 			throw new NoSuchElementException("a er tom!");
 		}
-		//for(int j = 0; j < a.length-1; j++){
+		//for(int j = 0; j < a.lengde-1; j++){
 		for (int i = 0; i < a.length - 1; i++) {
 			if (a[i] > a[i + 1]) {
 				hjelpevariabel = a[i];
@@ -48,7 +48,7 @@ public class Oblig1 {
 		if (a.length < 1) {
 			throw new NoSuchElementException("a er tom!");
 		}
-		//for(int j = 0; j < a.length-1; j++){
+		//for(int j = 0; j < a.lengde-1; j++){
 		for (int i = 0; i < a.length - 1; i++) {
 			if (a[i] > a[i + 1]) {
 				hjelpevariabel = a[i];
@@ -395,7 +395,7 @@ public class Oblig1 {
 
 		if (n < 3) {
 			throw // må ha minst to verdier
-					new NoSuchElementException("a.length(" + n + ") < 2!");
+					new NoSuchElementException("a.lengde(" + n + ") < 2!");
 		}
 		int[] b = indeks(a);
 		int m = b[0];
@@ -455,7 +455,7 @@ public class Oblig1 {
         /*
         int verdi = a[0];
         for (int l = 0; l < k; l++) {
-            bytt(b, l, min(b, l, b.length));
+            bytt(b, l, min(b, l, b.lengde));
         }
         */
 		return Arrays.copyOf(b, k);

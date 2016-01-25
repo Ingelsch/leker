@@ -38,7 +38,7 @@ public class Program
   int antInv = Tabell.inversjoner(a);                 // inversjoner
   System.out.println("Inversjoner: " + antInv);       // skriver ut
 
-  int antOmb = Tabell.boble(a, a.length);             // ombyttinger
+  int antOmb = Tabell.boble(a, a.lengde);             // ombyttinger
   antInv = Tabell.inversjoner(a);                     // inversjoner
 
   System.out.println(Arrays.toString(a));             // skriver ut

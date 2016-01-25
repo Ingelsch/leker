@@ -10,7 +10,7 @@ public class Oppgave1_1_5_3
 	    int temp = a[sist];            // tar vare på siste verdi
 	    a[sist] = maksverdi;          // legger maksverdi sist (vaktpost)
 
-	    for (int i = 0; ; i++)         // i starter med 0, vaktposten gir grenseverdier, så ingen i < a.length
+	    for (int i = 0; ; i++)         // i starter med 0, vaktposten gir grenseverdier, så ingen i < a.lengde
 	      if (a[i] >= maksverdi)       // denne blir sann til slutt
 	      {
 	        if (i == sist)             // sjekker om vi er ferdige

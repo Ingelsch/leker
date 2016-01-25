@@ -15,7 +15,7 @@ public class TabellKø<T> implements Kø<T>
 	{
 		T[] b = (T[]) new Object[lengde];  // ny tabell
 
-		// kopierer intervallet a[fra:a.length> over i b
+		// kopierer intervallet a[fra:a.lengde> over i b
 		System.arraycopy(a, fra, b, 0, a.length - fra);
 
 		// kopierer intervallet a[0:fra> over i b
@@ -217,13 +217,13 @@ public class TabellKø<T> implements Kø<T>
 	{
 		T[] b = (T[])new Object[lengde];  // ny tabell
 
-		// kopierer intervallet a[fra:a.length> over i b
-		System.arraycopy(a,fra,b,0,a.length - fra);
+		// kopierer intervallet a[fra:a.lengde> over i b
+		System.arraycopy(a,fra,b,0,a.lengde - fra);
 
 		// kopierer intervallet a[0:fra> over i b
-		System.arraycopy(a,0,b,a.length - fra, fra);
+		System.arraycopy(a,0,b,a.lengde - fra, fra);
 
-		fra = 0; til = a.length;
+		fra = 0; til = a.lengde;
 
 		return b;
 	}
@@ -247,9 +247,9 @@ public class TabellKø<T> implements Kø<T>
 	{
 		a[til] = t;                       // ny verdi bakerst i køen
 		til++;                            // øker til med 1
-		if (til == a.length) til = 0;     // hopper til 0
+		if (til == a.lengde) til = 0;     // hopper til 0
 		if (fra == til)                   // sjekker om tabellen er full
-			a = utvidTabell(2*a.length);    // dobler tabellen
+			a = utvidTabell(2*a.lengde);    // dobler tabellen
 	}
 
 	public T kikk()
@@ -268,13 +268,13 @@ public class TabellKø<T> implements Kø<T>
 		T temp = a[fra];                  // tar vare på den første i køen
 		a[fra] = null;                    // nuller innholdet
 		fra++;                            // øker fra med 1
-		if (fra == a.length) fra = 0;     // hopper til 0
+		if (fra == a.lengde) fra = 0;     // hopper til 0
 		return temp;                      // returnerer den første
 	}
 
 	public int antall()
 	{
-		return fra <= til ? til - fra : a.length + til - fra;
+		return fra <= til ? til - fra : a.lengde + til - fra;
 	}
 
 	public boolean tom()
@@ -287,7 +287,7 @@ public class TabellKø<T> implements Kø<T>
 		while (fra != til)
 		{
 			a[fra++] = null;
-			if (fra == a.length) fra = 0;
+			if (fra == a.lengde) fra = 0;
 		}
 	}
 
@@ -300,13 +300,13 @@ public class TabellKø<T> implements Kø<T>
 		StringBuilder s = new StringBuilder();
 		s.append('[').append(a[sfra]);
 		sfra++;
-		if (sfra == a.length) sfra = 0;
+		if (sfra == a.lengde) sfra = 0;
 
 		while (sfra != stil)
 		{
 			s.append(',').append(' ').append(a[sfra]);
 			sfra++;
-			if (sfra == a.length) sfra = 0;
+			if (sfra == a.lengde) sfra = 0;
 		}
 
 		s.append(']');
@@ -321,9 +321,9 @@ public class TabellKø<T> implements Kø<T>
 		while (k != til)
 		{
 			if (t.equals(a[k]))
-				return fra <= k ? k - fra : a.length + k - fra;
+				return fra <= k ? k - fra : a.lengde + k - fra;
 
-			k++; if (k == a.length) k = 0;
+			k++; if (k == a.lengde) k = 0;
 		}
 		return -1;  // ikke funnet
 

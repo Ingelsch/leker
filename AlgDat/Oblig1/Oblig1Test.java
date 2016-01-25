@@ -730,14 +730,14 @@ public class Oblig1Test
 			unntak = true;
 			if (!(e instanceof IllegalArgumentException))
 			{
-				System.out.println("Opgave 9: c) Feil unntak for k > a.length!");
+				System.out.println("Opgave 9: c) Feil unntak for k > a.lengde!");
 				antallFeil++;
 			}
 		}
 
 		if (!unntak)
 		{
-			System.out.println("Opgave 9: d) Skal kaste unntak for k > a.length!");
+			System.out.println("Opgave 9: d) Skal kaste unntak for k > a.lengde!");
 			antallFeil++;
 		}
 

@@ -15,7 +15,7 @@ public class TabellToveiskø<T> implements Toveiskø<T>
 	{
 		T[] b = (T[]) new Object[lengde];  // ny tabell
 
-		// kopierer intervallet a[fra:a.length> over i b
+		// kopierer intervallet a[fra:a.lengde> over i b
 		System.arraycopy(a, fra, b, 0, a.length - fra);
 
 		// kopierer intervallet a[0:fra> over i b

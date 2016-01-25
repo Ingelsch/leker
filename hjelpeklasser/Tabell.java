@@ -254,7 +254,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		int n = a.length;   // tabellens lengde
 
 		if (n < 2) throw   // må ha minst to verdier!
-				new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+				new java.util.NoSuchElementException("a.lengde(" + n + ") < 2!");
 
 		int m = maks(a);  // m er posisjonen til tabellens største verdi
 
@@ -284,7 +284,7 @@ public class Tabell //Samleklasse for tabellmetoder
 	{
 		int n = a.length;     // tabellens lengde
 		if (n < 2) throw      // må ha minst to verdier
-				new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+				new java.util.NoSuchElementException("a.lengde(" + n + ") < 2!");
 
 		int m = 0;      // m er posisjonen til største verdi
 		int nm = 1;     // nm er posisjonen til nest største verdi
@@ -326,7 +326,7 @@ public class Tabell //Samleklasse for tabellmetoder
 
 		// må ha minst to verdier i tabellen
 		if (a.length < 2) throw new
-				IllegalArgumentException("a.length(" + a.length + ") < 2!");
+				IllegalArgumentException("a.lengde(" + a.length + ") < 2!");
 
 		int sist = a.length - 1; // siste posisjon i tabellen
 
@@ -371,7 +371,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		int n = a.length;                // for å forenkle notasjonen
 
 		if (n < 2) // må ha minst to verdier!
-			throw new IllegalArgumentException("a.length(" + n + ") < 2!");
+			throw new IllegalArgumentException("a.lengde(" + n + ") < 2!");
 
 		int[] b = new int[2*n];          // turneringstreet
 		System.arraycopy(a,0,b,n,n);     // legger a bakerst i b
@@ -403,7 +403,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		int n = a.length;   // tabellens lengde
 
 		if (n < 2) throw new IllegalArgumentException
-				("a.length(" + n + ") < 2!");
+				("a.lengde(" + n + ") < 2!");
 
 		int m = Tabell.min(a);   // m er posisjonen til tabellens minste verdi
 
@@ -429,7 +429,7 @@ public class Tabell //Samleklasse for tabellmetoder
 		int n = a.length;     // tabellens lengde
 
 		if (n < 3)     // må ha minst tre verdier
-			throw new IllegalArgumentException("a.length(" + n + ") < 3!");
+			throw new IllegalArgumentException("a.lengde(" + n + ") < 3!");
 
 		int m = 0;      // m er posisjonen til største verdi
 		int nm = 1;     // nm er posisjonen til nest største verdi
